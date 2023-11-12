@@ -1,117 +1,17 @@
 \documentclass[uplatex,dvipdfmx,a4paper,10pt,fleqn]{jsarticle}
-\usepackage{cite}
 
-
-%括弧
-\usepackage{delimseasy}
-
-%二段組
-\usepackage{multicol}
-\setlength{\columnseprule}{.5pt} %中央の線
-
-%数式フォント
-%数式
-\usepackage{nccmath,amsmath,amssymb}
-\usepackage{mathtools}
-\usepackage{empheq} %数式の囲いに使う
-\usepackage{physics}
-\usepackage{bm}
-\usepackage[bbsets]{jkmath} %\Nなどをつかえる
-\usepackage{amsthm}
-
-\usepackage{enumerate}
-
-%ハイパーリンク用
-\usepackage{url}
-\usepackage[dvipdfmx]{hyperref}
-\usepackage{xcolor}
-\hypersetup{colorlinks=true,citecolor={green!40!black},linkcolor={green!40!black},urlcolor={blue!70!black},}
-\usepackage[otfcid,otfmacros]{pxjahyper}
-\usepackage{bookmark}
-
-%tcolorbox系
-\usepackage[many]{tcolorbox}
-\tcbuselibrary{breakable,skins}
-\newtcolorbox{hosoibox}[1]{colframe=black,colback=white,coltitle=black,colbacktitle=white,boxrule=0.5pt,arc=0mm,enhanced,attach boxed title to top left={xshift=10mm,yshift=-3mm},boxed title style={frame hidden},title=#1}
-
-%leftbar環境に注釈が入れられないことを解消する環境．名前は，tcolorboxの[t]とleftbarの組み合わせ
-\newtcolorbox{tbleftline}{blanker,left=5mm,borderline west={1.1mm}{0pt}{black}}
-\newenvironment{tleftbar}{\begin{tbleftline}\setlength{\parindent}{1zw}}{\end{tbleftline}}
-
-
-\usepackage {framed,color}
-
-%題名付き四角
-\usepackage{ascmac}
-\usepackage{fancybox}
-
-%囲い文字
-\usepackage[multi,jis2004,uplatex,expert,deluxe]{otf}
-%図に使うもの
-\usepackage{tikz}
-\usetikzlibrary{intersections,calc,arrows.meta}
-\usepackage[dvipdfmx,marginparwidth=0pt,margin=25truemm]{geometry}
-\usepackage{bxpapersize}
-\usepackage[absolute,overlay]{textpos} %図の配置を好きにする
-
-%画像
-\usepackage{wrapfig}
-%footnoteの変更
-\renewcommand\thefootnote{{\dag}\arabic{footnote}}
-\renewcommand{\thempfootnote}{{\dag}\arabic{mpfootnote}}
-\interfootnotelinepenalty=10000
-
-\usepackage{oubraces} %overunderbraces
-
-%underbraceの文字数が多いときのためのadunderbrace
-\usepackage{ifthen}
-\newlength{\wdTempA}
-\newlength{\wdTempB}
-\newcommand{\adunderbrace}[2]{%
-\settowidth{\wdTempA}{$#1$}%
-\settowidth{\wdTempB}{${\scriptstyle #2}$}%
-\ifthenelse{\wdTempA<\wdTempB}{%
-\hspace*{.5\wdTempA}\hspace*{-.5\wdTempB}%
-\underbrace{#1}_{#2}%
-\hspace*{.5\wdTempA}\hspace*{-.5\wdTempB}%
-}{%
-\underbrace{#1}_{#2}%
-}%
-}%
-%丸付き文字
-\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
-
-\setlength{\abovedisplayskip}{5pt} 
-\setlength{\belowdisplayskip}{3pt}
-
-
-%ユーザー定義
-\newcommand{\dash}[1]{#1^\prime}
-\newcommand{\ddash}[1]{#1^{\prime\prime}}
-\newcommand{\dddash}[1]{#1^{\prime\prime\prime}}
-\newcommand{\hodash}[2]{#2^{(#1)}}
-\renewcommand{\labelenumi}{(\arabic{enumi})}%itemを(数字)に変更
-\newcommand{\two}{I\hspace{-1.2pt}I}
-\newcommand{\three}{I\hspace{-1.2pt}I\hspace{-1.2pt}I}
-\renewcommand{\proofname}{\textgt{証明}}
-\renewcommand{\qed}{\unskip\nobreak\quad\qedsymbol}
-
-\newcommand\hodai{\noindent{《補題》}}
+\input{preamble.tex}
 
 %inputなどのプリアンブルを無視
 \usepackage{docmute}
-
-\everymath{\displaystyle}
 
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
-\chead{吹田微分積分・解答集}
+\chead{理工系の微分積分・解答集}
 \rhead{\thepage}
 \cfoot{}
-
-\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
 
 \begin{document}
@@ -896,7 +796,7 @@
 \subsection*{p34：22-(1)}
 \addcontentsline{toc}{subsection}{\texorpdfstring{p34：22-(1)}{p34：22-(1)}}
 
-\hodai 
+\kakko{補題}
 
 $\{ a_n \}$を実数列とする．このとき，
 \[
