@@ -9,18 +9,8 @@
 \usepackage{multicol}
 \setlength{\columnseprule}{.5pt} %中央の線
 
-
-%フォント
-\usepackage[multi,jis2004,uplatex,expert,deluxe]{otf}
-\usepackage[T1]{fontenc}
-\usepackage{tgheros}
-\renewcommand{\kanjifamilydefault}{\gtdefault}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage[scaled]{helvet}
-
-%代替フォント設定
-\DeclareFontShape{JY2}{hgt}{b}{n}{<->ssub*hgt/bx/n}{}
-\DeclareFontShape{JT2}{hgt}{b}{n}{<->ssub*hgt/m/n}{}
+%見出しのフォント
+\renewcommand{\headfont}{\sffamily\bfseries}
 
 %数式
 \usepackage{nccmath,amsmath,amssymb}
