@@ -206,7 +206,28 @@
         \end{proof}
         \end{tleftbar}
 
-
+        \subsection*{p7：問7}
+        \addcontentsline{toc}{subsection}{\texorpdfstring{p7：問7}{p7：問7}}
+    
+\begin{leftbar} \begin{proof}
+    任意の$M > 0$に対し，
+    \[
+      a_n > M + 1 \quad (n > N)
+    \]
+    なる$N$が存在する．
+    $m > \max \left\{ N, N(M + 1) - \sum_{k = 1}^N a_k \right\}$となるような$m$をひとつとり固定する．
+    $n > m$に対して
+    \begin{align*}
+      b_n
+      &= \frac{1}{n} \sum_{k = 1}^N a_k + \frac{1}{n} \sum_{k = N + 1}^n a_k \\
+      &> \frac{N(M + 1) - n}{n} + \frac{n - N}{n} (M + 1) \\
+      &= M
+    \end{align*}
+  \end{proof}
+\end{leftbar}
+  
+  \newpage
+ 
     \subsection*{p9：問8}
     \addcontentsline{toc}{subsection}{\texorpdfstring{p9：問8}{p9：問8}}
 
@@ -276,8 +297,63 @@
     \end{proof}
     \end{tleftbar}
 
-        \subsection*{p9：問10}
-        \addcontentsline{toc}{subsection}{\texorpdfstring{p9：問10}{p9：問10}}
+
+    \subsection*{p9：問9-(2)}
+    \addcontentsline{toc}{subsection}{\texorpdfstring{p9：問9-(2)}{p9：問9-(2)}}
+
+
+ \begin{leftbar} \begin{proof}
+    $a_n b_n \to \gamma$とする．
+    任意の$\varepsilon > 0$をとる．
+    $a_n \to \alpha$から$\frac{1}{a_n} \to \frac{1}{\alpha}$ ($\because$ Thm2)
+    \begin{enumerate}[label = (\roman*)]
+      \item $\gamma \ne 0$のとき，仮定より
+            \[
+              \abs{\frac{1}{a_n} - \frac{1}{\alpha}} < \frac{\varepsilon}{2 \lvert \gamma \rvert} \quad (n \geq N_1)
+            \]
+            \[
+              \abs{a_n b_n - \gamma} < \frac{\varepsilon}{2 \left( 1 + \frac{1}{\abs{\alpha}} \right)} \quad (n \geq N_2)
+            \]
+            となる$N_1, N_2$が存在する．
+            このとき，$N = \max \{ N_1, N_2 \}$とすると，
+            \begin{align*}
+              \abs{b_n - \frac{\gamma}{\alpha}}
+              &= \abs{\frac{1}{a_n}(a_n b_n - \gamma) + \gamma \left( \frac{1}{a_n} - \frac{1}{\alpha} \right)} \\
+              &\leq \abs{\frac{1}{a_n}} \abs{a_n b_n - \gamma} + \abs{\gamma} \abs{\frac{1}{a_n} - \frac{1}{\alpha}} \quad (n \geq N) \; \cdots \; (*)
+            \end{align*}
+            ここで，$\abs{\frac{1}{a_n} - \frac{1}{\alpha}} < 1 \quad (n \geq N_3)$となる$N_3$が存在し，
+            \[
+              \abs{\frac{1}{a_n} - \frac{1}{\alpha}} \geq \abs{\frac{1}{a_n}} - \abs{\frac{1}{\alpha}}
+            \]
+            から，
+            \[
+              \abs{\frac{1}{a_n}} < 1 + \frac{1}{\abs{\alpha}}
+            \]
+            よって，$N' := \max\{ N_1, N_2, N_3 \}$とすれば，
+            \begin{align*}
+              \abs{b_n - \frac{\gamma}{\alpha}}
+              &\leq \frac{1}{\abs{a_n}} \abs{a_n b_n - \gamma} + \abs{\gamma} \abs{\frac{1}{a_n} - \frac{1}{\alpha}} \\
+              &< \left( 1 + \frac{1}{\abs{\alpha}} \right) \frac{\varepsilon}{2 \left( 1 + \frac{1}{\abs{\alpha}} \right)} + \abs{\gamma} \cdot \frac{\, \frac{\varepsilon}{2} \,}{\abs{\gamma}} \\
+              &= \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+              &= \varepsilon \quad (n \geq N')
+            \end{align*}
+      \item $\gamma = 0$のとき
+            \begin{align*}
+              \abs{b_n - 0}
+              &= \abs{\frac{1}{a_n}} \abs{a_n b_n} \\
+              &< \left( 1 + \frac{1}{\abs{\alpha}} \right) \cdot \frac{\varepsilon}{2 \left( 1 + \frac{1}{\abs{\alpha}} \right)} \\
+              &< \varepsilon
+            \end{align*}
+            より$b_n \to 0$
+    \end{enumerate}
+  \end{proof}
+\end{leftbar}
+
+\newpage 
+
+
+    \subsection*{p9：問10}
+    \addcontentsline{toc}{subsection}{\texorpdfstring{p9：問10}{p9：問10}}
     
 
 \begin{tleftbar}
@@ -2055,10 +2131,49 @@ $f(0)=0$だから，
 \end{tleftbar}
 
 
+\newpage 
 
 \section*{第4章：定積分とその応用}
 \addcontentsline{toc}{section}{\texorpdfstring{第4章：定積分とその応用}{第4章：定積分とその応用}}
 
+
+\subsection*{p103：問1}
+\addcontentsline{toc}{subsection}{\texorpdfstring{p103：問1}{p103：問1}}
+
+
+\begin{tleftbar}
+  \begin{proof}
+  上方和について証明する．
+
+  $\varDelta$に分点$x^{\ast}$(ただし$ x_{k-1} \leqq x^{\ast} \leqq x_{k}$)を付け加えた分割を$\varDelta '$とする．
+  このとき，$ S[\varDelta ']$は，$S[\varDelta]$の
+  \[
+    M_k (x_k-x_{k-1})
+  \]
+    の項を
+  \[
+  M_k' (x^{\ast}-x_{k-1})+M_k ''(x_k - x^{\ast})
+  \]
+  でおきかえたものとなる．ただしここで
+  \[
+    M_k ' = \sup \{ f(x) \mid x_{k-1} \leqq x \leqq x^{\ast} \} , \quad M_k '' = \sup \{ f(x) \mid x^\ast \leqq x \leqq x_k \}
+  \]
+  とおいた．この定義から
+  \[
+    M_k ' \leqq M_k ,\quad M_k '' \leqq M_k
+  \]
+  であるから，
+  \begin{align*}
+    M_k' (x^{\ast}-x_{k-1})+M_k ''(x_k - x^{\ast}) & \leqq M_k (x^{\ast}-x_{k-1})+M_k (x_k - x^{\ast}) \\
+    & = M(x_k-x_{k-1})
+  \end{align*}
+  であるから，$S [\varDelta] \leqq S[ \varDelta']$である．また，分割が複数個のときは同じ操作を繰り返せばよい．
+  
+  これで上方和について証明でき，下方和についても同様の議論を繰り返して示せる．
+\end{proof}
+\end{tleftbar}
+
+\newpage 
 
 \subsection*{p128：16-(1),(2)}
 \addcontentsline{toc}{subsection}{\texorpdfstring{p128：16-(1),(2)}{p128：16-(1),(2)}}
