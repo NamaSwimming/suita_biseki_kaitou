@@ -5,7 +5,6 @@
 %inputなどのプリアンブルを無視
 \usepackage{docmute}
 
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
@@ -867,8 +866,85 @@
     である．
 \end{tleftbar}
 
+\newpage 
 
+\subsection*{p33：18}
+\addcontentsline{toc}{subsection}{\texorpdfstring{p33：18}{p33：18}}
 
+\begin{defi*}
+  $E, F \subset \mathbb{R}$のとき，$k E$，$E+F$を以下のように定義する．
+  \begin{align*} 
+    & kE= \{ kx \mid x \in E \} ~(k>0),\\
+    & E+F = \{ x+y \mid x \in E, y \in F \}.
+  \end{align*} 
+\end{defi*}
+
+\kakko{(1)について}
+
+\begin{tleftbar} 
+  \begin{proof}
+  二段階に分けて証明する．
+  \begin{enumerate}[(I)]
+  \item まず，$x \in E$
+  とすると，$ x \leqq \sup E$であるから，
+  $k>0$のもとでは$kx \leqq k \sup E$となり，$k \sup E$は$kE$の上界のひとつである．
+  ゆえに
+  \[
+    \sup kE \leqq k \sup E
+  \]
+  となる．
+  \item  次に，$a < k \sup E$とすると，$k>0$のもとで$a/k < x$
+  となる$x \in E$が存在する．ゆえに
+  \[
+    a< kx \in kE
+  \]
+  となり， $k \sup E$より小さい実数は$kE$の上界でない．
+  \end{enumerate}
+  (I)，(II)により
+  \[
+    \sup \{ kx \mid x \in E \} = k \sup E.
+  \]
+\end{proof}
+\end{tleftbar}
+
+\kakko{(2)について}
+
+\begin{tleftbar} 
+  \begin{proof}
+  二段階に分けて証明する．
+  \begin{enumerate}[(I)]
+  \item まず，$ x \in E$と$y \in F$から
+  $x \leqq \sup E $，$y \leqq \sup F$であるがゆえに，
+  $x+y \leqq \sup E + \sup F$
+  となり，$\sup E + \sup F$は$E+F$の上界のひとつである．ゆえに
+  \[
+  \sup (E+F) \leqq \sup E +\sup F.
+  \]
+  \item 次に，
+  $s < \sup E + \sup F$
+  を任意にとる．
+
+  このとき，$ s - \sup E < \sup F$
+  であるから$s-\sup E$は$F$の上界でなく，
+  $s - \sup E< y$なる$y \in F$が存在する．ゆえに
+  $s-y < \sup E$
+  である．このとき$s-y$は$E$の上界でないので
+  $s-y < x $
+  をみたす$ x \in E$が存在する．
+  この議論から，
+  \[
+  s< x+y
+\]
+  となり，$s$は$E+F$の上界でない．つまり，$\sup E + \sup F$より小さい数は$E+F$の上界でない．
+\end{enumerate}
+(I)，(II)の議論により，
+\[
+\sup \{ x+y \mid x \in E,y \in  F \} = \sup E + \sup F.
+\]
+\end{proof}
+\end{tleftbar}
+
+\newpage 
 \subsection*{p34：22-(1)}
 \addcontentsline{toc}{subsection}{\texorpdfstring{p34：22-(1)}{p34：22-(1)}}
 
@@ -2165,7 +2241,7 @@ $f(0)=0$だから，
   であるから，
   \begin{align*}
     M_k' (x^{\ast}-x_{k-1})+M_k ''(x_k - x^{\ast}) & \leqq M_k (x^{\ast}-x_{k-1})+M_k (x_k - x^{\ast}) \\
-    & = M(x_k-x_{k-1})
+    & = M_k(x_k-x_{k-1})
   \end{align*}
   であるから，$S [\varDelta] \leqq S[ \varDelta']$である．また，分割が複数個のときは同じ操作を繰り返せばよい．
   
